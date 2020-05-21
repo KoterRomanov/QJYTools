@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>widget_settings</class>
+ <widget class="QWidget" name="widget_settings">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>448</width>
+    <height>358</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>448</width>
+    <height>358</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>448</width>
+    <height>358</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#widget_settings
+{
+	background: #FFFFFF;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}</string>
+  </property>
+  <widget class="QWidget" name="title_widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>448</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#title_widget
+{
+	background:#00D770;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>28</x>
+      <y>16</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/image/logo.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_title">
+    <property name="geometry">
+     <rect>
+      <x>53</x>
+      <y>16</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#label_title
+{
+	color: #FFFFFF;
+	font-size: 14px;
+}</string>
+    </property>
+    <property name="text">
+     <string>设置</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_close">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>16</y>
+      <width>22</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#button_close
+{
+	border-image: url(:/image/close.png);
+}
+
+#button_close:hover
+{
+	background: green;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_fps">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>160</y>
+     <width>85</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#label_fps
+{
+	color: #47505D;
+	font-size: 13px;
+}</string>
+   </property>
+   <property name="text">
+    <string>FPS:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_resolution">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>110</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#label_resolution
+{
+	color: #47505D;
+	font-size: 13px;
+}</string>
+   </property>
+   <property name="text">
+    <string>分辨率：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_ok">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>290</y>
+     <width>110</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#button_ok
+{
+	background: #00D770;
+	border-radius: 4px;
+
+	font-size: 13px;
+	color: #FFFFFF;
+}
+
+#button_ok:hover
+{
+	background: #00D770
+}</string>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_bitrate">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>220</y>
+     <width>85</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#label_bitrate
+{
+	color: #47505D;
+	font-size: 13px;
+}</string>
+   </property>
+   <property name="text">
+    <string>比特流：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="button_cancel">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>290</y>
+     <width>110</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#button_cancel
+{
+	background: #FFFFFF;
+	border-radius: 4px;
+	border-color: #00D770;
+	border-width: 1px;
+	border-style: solid;
+
+	font-size: 13px;
+	color: #00D770;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="combobox_resolution">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>100</y>
+     <width>280</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#combobox_resolution
+{
+	min-height: 36px;
+	max-height: 36px;
+	min-width: 280px;
+	max-width: 280px;
+	border-radius: 4px;
+	background: #F0F4F5;
+	selection-color: red;
+}
+
+#combobox_resolution:hover
+{
+	border: 1px solid #00D770;
+}
+
+QComboBox#combobox_resolution::drop-down
+{
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+
+QComboBox#combobox_resolution::down-arrow
+{
+	background: transparent;
+	padding: 0px 0px 0px 0px;
+	image: url(:/image/icon_down-arrow.png);
+}
+
+/*下拉框颜色*/
+QComboBox QAbstractItemView
+{
+	outline: 0px solid gray; /*选定项的虚框*/
+	background: #FFFFFF;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+QComboBox QAbstractItemView::Item
+{
+	height: 36px;
+}
+
+QComboBox QAbstractItemView::Item:hover
+{
+	color: white;
+	background-color: #00D770;
+}
+
+QComboBox QAbstractItemView::Item:selected
+{
+	color: white;
+	background-color: #00D770;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>1920x1080</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1920x1200</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1280x720</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1024x768</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="combobox_fps">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>150</y>
+     <width>280</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#combobox_fps
+{
+	min-height: 36px;
+	max-height: 36px;
+	min-width: 280px;
+	max-width: 280px;
+	border-radius: 4px;
+	background: #F0F4F5;
+	selection-color: red;
+}
+
+#combobox_fps:hover
+{
+	border: 1px solid #00D770;
+}
+
+QComboBox#combobox_fps::drop-down
+{
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+
+QComboBox#combobox_fps::down-arrow
+{
+	background: transparent;
+	padding: 0px 0px 0px 0px;
+	image: url(:/image/icon_down-arrow.png);
+}
+
+/*下拉框颜色*/
+QComboBox QAbstractItemView
+{
+	outline: 0px solid gray; /*选定项的虚框*/
+	background: #FFFFFF;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+QComboBox QAbstractItemView::Item
+{
+	height: 36px;
+}
+
+QComboBox QAbstractItemView::Item:hover
+{
+	color: white;
+	background-color: #00D770;
+}
+
+QComboBox QAbstractItemView::Item:selected
+{
+	color: white;
+	background-color: #00D770;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>30</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>60</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="combobox_bitrate">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>210</y>
+     <width>280</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#combobox_bitrate
+{
+	min-height: 36px;
+	max-height: 36px;
+	min-width: 280px;
+	max-width: 280px;
+	border-radius: 4px;
+	background: #F0F4F5;
+	selection-color: red;
+}
+
+#combobox_bitrate:hover
+{
+	border: 1px solid #00D770;
+}
+
+QComboBox#combobox_bitrate::drop-down
+{
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+
+QComboBox#combobox_bitrate::down-arrow
+{
+	background: transparent;
+	padding: 0px 0px 0px 0px;
+	image: url(:/image/icon_down-arrow.png);
+}
+
+/*下拉框颜色*/
+QComboBox QAbstractItemView
+{
+	outline: 0px solid gray; /*选定项的虚框*/
+	background: #FFFFFF;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+QComboBox QAbstractItemView::Item
+{
+	height: 36px;
+}
+
+QComboBox QAbstractItemView::Item:hover
+{
+	color: white;
+	background-color: #00D770;
+}
+
+QComboBox QAbstractItemView::Item:selected
+{
+	color: white;
+	background-color: #00D770;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>10000</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>20000</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>30000</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>40000</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>50000</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

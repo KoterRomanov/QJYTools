@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>448</width>
+    <height>370</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>448</width>
+    <height>370</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>448</width>
+    <height>370</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#MainWindow
+{
+	background-color: red;
+	border: none;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>448</width>
+     <height>370</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>448</width>
+     <height>370</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#centralwidget
+{
+	background: #FFFFFF;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}</string>
+   </property>
+   <widget class="QLabel" name="label_address">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>100</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#label_address
+{
+	color: #47505D;
+	font-size: 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string>请输入IP：</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_port">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#label_port
+{
+	color: #47505D;
+	font-size: 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string>请输入端口：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineedit_address">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>90</y>
+      <width>290</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineedit_address
+{
+	min-height: 36px;
+	max-height: 36px;
+	min-width: 280px;
+	max-width: 280px;
+	border-radius: 4px;
+	background: #F0F4F5;
+	selection-color: red;
+	padding-left: 10px;
+}
+
+#lineedit_address:hover
+{
+	border: 1px solid #00D770;
+}</string>
+    </property>
+    <property name="placeholderText">
+     <string>192.168.1.1 (示例)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineedit_port">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>145</y>
+      <width>290</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineedit_port
+{
+	min-height: 36px;
+	max-height: 36px;
+	min-width: 280px;
+	max-width: 280px;
+	border-radius: 4px;
+	background: #F0F4F5;
+	selection-color: red;
+	padding-left: 10px;
+}
+
+#lineedit_port:hover
+{
+	border: 1px solid #00D770;
+}</string>
+    </property>
+    <property name="placeholderText">
+     <string>10000 (示例)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_connection">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>320</y>
+      <width>110</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#button_connection
+{
+	background: #C4C4C4;
+	border-radius: 4px;
+
+	font-size: 13px;
+	color: #FFFFFF;
+}
+
+#button_connection:hover
+{
+	background: #00D770
+}</string>
+    </property>
+    <property name="text">
+     <string>立即连接</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="title_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>448</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#title_widget
+{
+	background:#00D770;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+</string>
+    </property>
+    <widget class="QPushButton" name="button_settings">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>15</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#button_settings
+{
+	border-image: url(:/image/settings.png);
+}
+
+#button_settings:hover
+{
+	background: green;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_minisize">
+     <property name="geometry">
+      <rect>
+       <x>385</x>
+       <y>15</y>
+       <width>22</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#button_minisize
+{
+	border-image: url(:/image/minimize.png);
+}
+
+#button_minisize:hover
+{
+	background: green;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_close">
+     <property name="geometry">
+      <rect>
+       <x>415</x>
+       <y>15</y>
+       <width>22</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>22</width>
+       <height>22</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#button_close
+{
+	border-image: url(:/image/close.png);
+}
+
+#button_close:hover
+{
+	background: green;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_title">
+     <property name="geometry">
+      <rect>
+       <x>53</x>
+       <y>16</y>
+       <width>281</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#label_title
+{
+	color: #FFFFFF;
+	font-size: 13px;
+}</string>
+     </property>
+     <property name="text">
+      <string>青椒云桌面协议</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>28</x>
+       <y>16</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/image/logo.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_username">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>210</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#label_username
+{
+	color: #47505D;
+	font-size: 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string>请输入用户名：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineedit_username">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>200</y>
+      <width>290</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineedit_username
+{
+	min-height: 36px;
+	max-height: 36px;
+	min-width: 280px;
+	max-width: 280px;
+	border-radius: 4px;
+	background: #F0F4F5;
+	selection-color: red;
+	padding-left: 10px;
+}
+
+#lineedit_username:hover
+{
+	border: 1px solid #00D770;
+}</string>
+    </property>
+    <property name="placeholderText">
+     <string>Administrator (示例)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_passwd">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>260</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#label_passwd
+{
+	color: #47505D;
+	font-size: 13px;
+}</string>
+    </property>
+    <property name="text">
+     <string>请输入密码：</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineedit_passwd">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>255</y>
+      <width>290</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineedit_passwd
+{
+	min-height: 36px;
+	max-height: 36px;
+	min-width: 280px;
+	max-width: 280px;
+	border-radius: 4px;
+	background: #F0F4F5;
+	selection-color: red;
+	padding-left: 10px;
+}
+
+#lineedit_passwd:hover
+{
+	border: 1px solid #00D770;
+}</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::PasswordEchoOnEdit</enum>
+    </property>
+    <property name="placeholderText">
+     <string>******** (示例)</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
