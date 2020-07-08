@@ -9,6 +9,7 @@
 #include <QTimer>
 #include <QDebug>
 #include <QMessageBox>
+#include <QGraphicsDropShadowEffect>
 
 /*
  * 问题1: 连接按钮连续点击, 导致事件阻塞, 一个连接完成后又会重新开启一个连接
@@ -21,7 +22,7 @@
  *
  */
 
-#define ENGLISH_VERSION
+//#define ENGLISH_VERSION
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -29,6 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_is_connecting(false)
 {
     ui->setupUi(this);
+
 
     // 地址栏添加正则表达式
     QRegExp rx_address("\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b");
@@ -46,6 +48,13 @@ MainWindow::MainWindow(QWidget *parent)
     // 移除顶部标题栏
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, true); // 解决设置了 central widget 圆角后, 仍然有两个白色小角的问题.
+
+    QGraphicsDropShadowEffect *effect = new QGraphicsDropShadowEffect(this);
+    effect->setOffset(0, 0);
+    effect->setColor(Qt::gray);
+    effect->setBlurRadius(20);
+    setGraphicsEffect(effect);
+
 
     ui->title_widget->installEventFilter(this);
     ui->button_connection->installEventFilter(this);
@@ -209,6 +218,38 @@ void MainWindow::save_user_data()
         ui->lineedit_passwd->setText(remote_passwd);
     }
 
+    int use_gateway = m_user_data->value("use_gateway").toInt();
+    if (use_gateway)
+    {
+        // TODO 将读取到是否使用网关配置写至界面
+        m_settings->set_use_gateway(use_gateway);
+
+        QString gateway = m_user_data->value("gateway").toString();
+        if (!gateway.isEmpty())
+        {
+            // TODO 将读取到的网关写至界面
+            m_settings->set_gateway(gateway);
+        }
+
+        QString gateway_tcp_port = m_user_data->value("gateway_tcp_port").toString();
+        if (!gateway_tcp_port.isEmpty())
+        {
+            // TODO 将读取到的网关 TCP 端口写至界面
+            m_settings->set_gateway_tcp_port(gateway_tcp_port);
+        }
+
+        QString gateway_udp_port = m_user_data->value("gateway_udp_port").toString();
+        if (!gateway_udp_port.isEmpty())
+        {
+            // TODO 将读取到的网关 UDP 端口写至界面
+            m_settings->set_gateway_udp_port(gateway_udp_port);
+        }
+
+    }
+
+    int show_screen = m_user_data->value("show_screen").toInt();
+    m_settings->set_show_screen(show_screen);
+
 }
 
 void MainWindow::slot_connection()
@@ -261,6 +302,19 @@ void MainWindow::slot_connection()
         return;
     }
 
+    // 是否使用网关
+    bool use_gateway = m_settings->use_gateway();
+    bool show_screen = m_settings->show_screen();
+    QString use_gateway_string = QString("0");
+    QString gateway = m_settings->get_gateway();
+    if (gateway.isEmpty())  gateway = QString("gw.qingjiaocloud.com");
+
+    QString gateway_tcp_port = m_settings->get_tcp_port();
+    if (gateway_tcp_port.isEmpty()) gateway_tcp_port = QString("10000");
+
+    QString gateway_udp_port = m_settings->get_udp_port();
+    if (gateway_udp_port.isEmpty()) gateway_udp_port = QString("10000");
+
     // disable 连接按钮
     ui->button_connection->setDisabled(true);
     qApp->processEvents();
@@ -271,51 +325,65 @@ void MainWindow::slot_connection()
     // 最小化
     showMinimized();
 
-    m_user_data->setValue("remote_address", remote_address);
-    m_user_data->setValue("remote_port", remote_port);
-    m_user_data->setValue("remote_username", remote_username);
-    m_user_data->setValue("remote_passwd", remote_passwd);
+    m_user_data->setValue("remote_address", remote_address); // 远程服务端地址
+    m_user_data->setValue("remote_port", remote_port);  // 远程服务端端口
+    m_user_data->setValue("remote_username", remote_username); // 远程服务端操作系统用户名
+    m_user_data->setValue("remote_passwd", remote_passwd);  // 远程服务端操作系统密码
+    m_user_data->setValue("use_gateway", QString::number(use_gateway));  // 是否使用网关
+    m_user_data->setValue("gateway", gateway); // 网关
+    m_user_data->setValue("gateway_tcp_port", gateway_tcp_port); // 网关 TCP 端口
+    m_user_data->setValue("gateway_udp_port", gateway_udp_port); // 网关 UDP 端口
+    m_user_data->setValue("show_screen", QString::number(show_screen)); // 是否全屏
+
+    QString connectionMode = "1";
+    if (use_gateway)
+    {
+        use_gateway_string = "1";
+        connectionMode = "2";
+    }
+
+    // 输出用户选择 USB 共享列表
+    m_settings->usb_dev_shared_ouput();
 
     // 命令行运行 qingjiaoview
     QStringList arguments;
-    arguments << "stream"
+    arguments << "--gateway"
+              << gateway
+              << "--gatewayPort"
+              << gateway_tcp_port
+              << "--raysync"
+              << gateway
+              << "--raysyncPort"
+              << gateway_udp_port
+              << "--server"
               << remote_address
-              << "mstsc"
-              << "183.240.23.11"
+              << "--serverPort"
+              << remote_port
               << "--resolution"
               << m_resolution
               << "--fps"
               << m_fps
               << "--bitrate"
               << m_bitrate
-              << "--raysyncPort"
-              << "32001"
-              << "--remotePort"
-              << remote_port
-              << "--httpsPort"
-              << "47984"
-              << "--httpPort"
-              << "47989"
-              << "--rtspPort"
-              << "48010"
-              << "--videoStreamPort"
-              << "47998"
-              << "--controlStreamPort"
-              << "47999"
-              << "--audioStreamPort"
-              << "48000"
-              << "--talkingPort"
-              << "48002"
-              << "--enetPort"
-              << "48010"
+              << "--fullscreen"
+              << QString::number(show_screen)
+              << "--windowCount"
+              << "1"
+              << "--isGateway"
+              << use_gateway_string
+              << "--connectionMode"
+              << connectionMode
+              << "--authenticateMode"
+              << "2"
               << "--restart"
               << "0"
               << "--user"
               << remote_username
               << "--passwd"
               << remote_passwd;
+
     QString program("./qingjiaoview");
-    QProcess::execute(program, arguments);
+    QProcess::startDetached(program, arguments);
 
     // disable 连接按钮
     ui->button_connection->setDisabled(false);
@@ -323,5 +391,7 @@ void MainWindow::slot_connection()
 
     m_is_connecting = false;    // 更新连接状态
 
-    showNormal(); // 恢复窗口状态
+    qApp->quit();
+
+//    showNormal(); // 恢复窗口状态
 }

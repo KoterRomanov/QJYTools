@@ -4,7 +4,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
-TARGET = QingJiao
+TARGET = QJDesktop
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -39,3 +39,24 @@ RESOURCES += \
     resource.qrc
 
 RC_ICONS = connection.ico
+
+win32 {
+    # 版权信息-公司
+    QMAKE_TARGET_COMPANY = Shenzhen Rayvision Technology Co., Ltd.
+
+    # 版权信息-文件描述
+    QMAKE_TARGET_DESCRIPTION = 青椒云远程桌面客户端
+
+    # 版权信息-产品名称
+    QMAKE_TARGET_PRODUCT = 青椒云远程桌面客户端
+
+    # 版权信息-版权
+    QMAKE_TARGET_COPYRIGHT = Copyright(C) 1998 - 2020 Rayvision. All Rights Reserved
+}
+
+VERSION = 3.0.4
+
+# 版权信息-语言
+# 0x0004-zh-Hans（简体中文）
+# 0x0009-en （英语）
+RC_LANG = 0x0004

@@ -1,0 +1,37 @@
+#include <windows.h>
+
+IDI_ICON1	ICON	DISCARDABLE	"E:\\QJYTools\\QJYTools\\connection.ico"
+
+VS_VERSION_INFO VERSIONINFO
+	FILEVERSION 3,0,4,0
+	PRODUCTVERSION 3,0,4,0
+	FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+	FILEFLAGS VS_FF_DEBUG
+#else
+	FILEFLAGS 0x0L
+#endif
+	FILEOS VOS__WINDOWS32
+	FILETYPE VFT_DLL
+	FILESUBTYPE 0x0L
+	BEGIN
+		BLOCK "StringFileInfo"
+		BEGIN
+			BLOCK "000404b0"
+			BEGIN
+				VALUE "CompanyName", "Shenzhen Rayvision Technology Co., Ltd.\0"
+				VALUE "FileDescription", "青椒云远程桌面客户端\0"
+				VALUE "FileVersion", "3.0.4.0\0"
+				VALUE "LegalCopyright", "Copyright(C) 1998 - 2020 Rayvision. All Rights Reserved\0"
+				VALUE "OriginalFilename", "QJDesktop.exe\0"
+				VALUE "ProductName", "青椒云远程桌面客户端\0"
+				VALUE "ProductVersion", "3.0.4.0\0"
+			END
+		END
+		BLOCK "VarFileInfo"
+		BEGIN
+			VALUE "Translation", 0x0004, 1200
+		END
+	END
+/* End of Version info */
+
