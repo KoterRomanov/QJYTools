@@ -523,6 +523,9 @@ public:
         widget_settings->setWindowTitle(QCoreApplication::translate("widget_settings", "Form", nullptr));
         label->setText(QString());
         label_title->setText(QCoreApplication::translate("widget_settings", "\350\256\276\347\275\256", nullptr));
+#if QT_CONFIG(tooltip)
+        button_close->setToolTip(QCoreApplication::translate("widget_settings", "<html><head/><body><p>\345\205\263\351\227\255</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
         button_close->setText(QString());
         label_udp_port->setText(QCoreApplication::translate("widget_settings", "UDP\347\253\257\345\217\243:", nullptr));
         button_cancel->setText(QCoreApplication::translate("widget_settings", "\345\217\226\346\266\210", nullptr));

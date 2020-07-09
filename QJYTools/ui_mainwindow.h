@@ -283,9 +283,30 @@ public:
         label_port->setText(QCoreApplication::translate("MainWindow", "\350\257\267\350\276\223\345\205\245\347\253\257\345\217\243\357\274\232", nullptr));
         lineedit_address->setPlaceholderText(QCoreApplication::translate("MainWindow", "192.168.1.1 (\347\244\272\344\276\213)", nullptr));
         lineedit_port->setPlaceholderText(QCoreApplication::translate("MainWindow", "10000 (\347\244\272\344\276\213)", nullptr));
+#if QT_CONFIG(whatsthis)
+        button_connection->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
         button_connection->setText(QCoreApplication::translate("MainWindow", "\347\253\213\345\215\263\350\277\236\346\216\245", nullptr));
+#if QT_CONFIG(tooltip)
+        button_settings->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\350\256\276\347\275\256</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(whatsthis)
+        button_settings->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\350\256\276\347\275\256</p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
         button_settings->setText(QString());
+#if QT_CONFIG(tooltip)
+        button_minisize->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\346\234\200\345\260\217\345\214\226</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(whatsthis)
+        button_minisize->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\346\234\200\345\260\217\345\214\226</p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
         button_minisize->setText(QString());
+#if QT_CONFIG(tooltip)
+        button_close->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\345\205\263\351\227\255</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(whatsthis)
+        button_close->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\345\205\263\351\227\255</p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
         button_close->setText(QString());
         label_title->setText(QCoreApplication::translate("MainWindow", "\351\235\222\346\244\222\344\272\221\346\241\214\351\235\242\345\215\217\350\256\256", nullptr));
         label->setText(QString());
