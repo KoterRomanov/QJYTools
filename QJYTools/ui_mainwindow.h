@@ -43,6 +43,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+        MainWindow->setWindowModality(Qt::NonModal);
         MainWindow->resize(448, 370);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -51,12 +52,12 @@ public:
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(448, 370));
         MainWindow->setMaximumSize(QSize(448, 370));
+        MainWindow->setAutoFillBackground(true);
         MainWindow->setStyleSheet(QString::fromUtf8("#MainWindow\n"
 "{\n"
-"	background-color: red;\n"
-"	border: none;\n"
-"	border-top-left-radius: 40px;\n"
-"	border-top-right-radius: 40px;\n"
+"\n"
+"\n"
+"\n"
 "}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -69,6 +70,9 @@ public:
 "	background: #FFFFFF;\n"
 "	border-top-left-radius: 6px;\n"
 "	border-top-right-radius: 6px;\n"
+"	\n"
+"	border: 1px solid gray;\n"
+"\n"
 "}"));
         label_address = new QLabel(centralwidget);
         label_address->setObjectName(QString::fromUtf8("label_address"));

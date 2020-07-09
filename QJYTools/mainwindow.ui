@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -31,13 +34,15 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <property name="styleSheet">
    <string notr="true">#MainWindow
 {
-	background-color: red;
-	border: none;
-	border-top-left-radius: 40px;
-	border-top-right-radius: 40px;
+
+
+
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -65,6 +70,9 @@
 	background: #FFFFFF;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
+	
+	border: 1px solid gray;
+
 }</string>
    </property>
    <widget class="QLabel" name="label_address">

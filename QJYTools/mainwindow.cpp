@@ -49,13 +49,6 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, true); // 解决设置了 central widget 圆角后, 仍然有两个白色小角的问题.
 
-    QGraphicsDropShadowEffect *effect = new QGraphicsDropShadowEffect(this);
-    effect->setOffset(0, 0);
-    effect->setColor(Qt::gray);
-    effect->setBlurRadius(20);
-    setGraphicsEffect(effect);
-
-
     ui->title_widget->installEventFilter(this);
     ui->button_connection->installEventFilter(this);
 

@@ -27,6 +27,7 @@ Settings::Settings(QWidget *parent)
     ui->combobox_resolution->setMaxVisibleItems(5);
 
     setWindowFlags(Qt::FramelessWindowHint);
+    setAttribute(Qt::WA_TranslucentBackground, true);
 
     ui->title_widget->installEventFilter(this);
 
@@ -324,6 +325,8 @@ void Settings::on_checkbox_use_gateway_stateChanged(int arg1)
         ui->button_ok->move(ui->button_ok->pos().x(), ui->button_ok->pos().y()+216);
         ui->button_cancel->move(ui->button_cancel->pos().x(), ui->button_cancel->pos().y()+216);
 
+        ui->widget_bottom->setFixedHeight(size().height()+216);
+
         setFixedHeight( size().height()+216);
     }
     else if (arg1 == Qt::Unchecked)
@@ -337,6 +340,7 @@ void Settings::on_checkbox_use_gateway_stateChanged(int arg1)
         ui->button_ok->move(ui->button_ok->pos().x(), ui->button_ok->pos().y()-216);
         ui->button_cancel->move(ui->button_cancel->pos().x(), ui->button_cancel->pos().y()-216);
 
+        ui->widget_bottom->setFixedHeight(size().height()-216);
         setFixedHeight( size().height()-216);
     }
 
