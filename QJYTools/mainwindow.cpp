@@ -1,6 +1,7 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "settings.h"
+#include "define.h"
 
 #include <QMouseEvent>
 #include <QRegExpValidator>
@@ -64,7 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 #ifdef ENGLISH_VERSION
-    ui->label_title->setText("QingJiao Remote Protocol");
+    ui->label_title->setText("QDP");
 
     ui->label_address->setText("Address:");
     ui->label_port->setText("Port:");
@@ -332,7 +333,7 @@ void MainWindow::slot_connection()
     if (use_gateway)
     {
         use_gateway_string = "1";
-        connectionMode = "2";
+        connectionMode = "1";
     }
 
     // 输出用户选择 USB 共享列表

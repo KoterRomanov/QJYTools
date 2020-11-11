@@ -53,14 +53,14 @@ public:
     {
         if (widget_settings->objectName().isEmpty())
             widget_settings->setObjectName(QString::fromUtf8("widget_settings"));
-        widget_settings->resize(448, 900);
+        widget_settings->resize(448, 600);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(widget_settings->sizePolicy().hasHeightForWidth());
         widget_settings->setSizePolicy(sizePolicy);
-        widget_settings->setMinimumSize(QSize(448, 900));
-        widget_settings->setMaximumSize(QSize(448, 900));
+        widget_settings->setMinimumSize(QSize(448, 600));
+        widget_settings->setMaximumSize(QSize(448, 600));
         widget_settings->setStyleSheet(QString::fromUtf8("#widget_settings\n"
 "{\n"
 "	background: #FFFFFF;\n"
@@ -103,11 +103,11 @@ public:
 "}"));
         widget_bottom = new QWidget(widget_settings);
         widget_bottom->setObjectName(QString::fromUtf8("widget_bottom"));
-        widget_bottom->setGeometry(QRect(0, 0, 448, 900));
+        widget_bottom->setGeometry(QRect(0, 0, 448, 600));
         sizePolicy.setHeightForWidth(widget_bottom->sizePolicy().hasHeightForWidth());
         widget_bottom->setSizePolicy(sizePolicy);
-        widget_bottom->setMinimumSize(QSize(448, 900));
-        widget_bottom->setMaximumSize(QSize(448, 900));
+        widget_bottom->setMinimumSize(QSize(448, 600));
+        widget_bottom->setMaximumSize(QSize(448, 600));
         widget_bottom->setStyleSheet(QString::fromUtf8("#widget_bottom\n"
 "{\n"
 "	background: #FFFFFF;\n"
@@ -117,7 +117,7 @@ public:
 "}"));
         label_udp_port = new QLabel(widget_bottom);
         label_udp_port->setObjectName(QString::fromUtf8("label_udp_port"));
-        label_udp_port->setGeometry(QRect(40, 390, 81, 16));
+        label_udp_port->setGeometry(QRect(230, 280, 71, 20));
         label_udp_port->setStyleSheet(QString::fromUtf8("#label_udp_port\n"
 "{\n"
 "	color: #47505D;\n"
@@ -125,15 +125,11 @@ public:
 "}"));
         lineedit_gateway = new QLineEdit(widget_bottom);
         lineedit_gateway->setObjectName(QString::fromUtf8("lineedit_gateway"));
-        lineedit_gateway->setGeometry(QRect(130, 250, 290, 36));
-        lineedit_gateway->setMinimumSize(QSize(290, 36));
-        lineedit_gateway->setMaximumSize(QSize(290, 36));
+        lineedit_gateway->setGeometry(QRect(90, 220, 331, 36));
+        lineedit_gateway->setMinimumSize(QSize(0, 0));
+        lineedit_gateway->setMaximumSize(QSize(16777215, 16777215));
         lineedit_gateway->setStyleSheet(QString::fromUtf8("#lineedit_gateway\n"
 "{\n"
-"	min-height: 36px;\n"
-"	max-height: 36px;\n"
-"	min-width: 280px;\n"
-"	max-width: 280px;\n"
 "	border-radius: 4px;\n"
 "	background: #F0F4F5;\n"
 "	selection-color: red;\n"
@@ -146,15 +142,13 @@ public:
 "}"));
         lineedit_tcp_port = new QLineEdit(widget_bottom);
         lineedit_tcp_port->setObjectName(QString::fromUtf8("lineedit_tcp_port"));
-        lineedit_tcp_port->setGeometry(QRect(130, 315, 290, 36));
-        lineedit_tcp_port->setMinimumSize(QSize(290, 36));
-        lineedit_tcp_port->setMaximumSize(QSize(290, 36));
+        lineedit_tcp_port->setGeometry(QRect(90, 270, 120, 36));
+        sizePolicy.setHeightForWidth(lineedit_tcp_port->sizePolicy().hasHeightForWidth());
+        lineedit_tcp_port->setSizePolicy(sizePolicy);
+        lineedit_tcp_port->setMinimumSize(QSize(0, 0));
+        lineedit_tcp_port->setMaximumSize(QSize(16777215, 16777215));
         lineedit_tcp_port->setStyleSheet(QString::fromUtf8("#lineedit_tcp_port\n"
 "{\n"
-"	min-height: 36px;\n"
-"	max-height: 36px;\n"
-"	min-width: 280px;\n"
-"	max-width: 280px;\n"
 "	border-radius: 4px;\n"
 "	background: #F0F4F5;\n"
 "	selection-color: red;\n"
@@ -167,7 +161,7 @@ public:
 "}"));
         button_cancel = new QPushButton(widget_bottom);
         button_cancel->setObjectName(QString::fromUtf8("button_cancel"));
-        button_cancel->setGeometry(QRect(300, 810, 110, 36));
+        button_cancel->setGeometry(QRect(300, 550, 110, 36));
         button_cancel->setStyleSheet(QString::fromUtf8("#button_cancel\n"
 "{\n"
 "	background: #FFFFFF;\n"
@@ -182,7 +176,7 @@ public:
 ""));
         label_gateway = new QLabel(widget_bottom);
         label_gateway->setObjectName(QString::fromUtf8("label_gateway"));
-        label_gateway->setGeometry(QRect(40, 260, 81, 16));
+        label_gateway->setGeometry(QRect(20, 230, 71, 20));
         label_gateway->setStyleSheet(QString::fromUtf8("#label_gateway\n"
 "{\n"
 "	color: #47505D;\n"
@@ -190,7 +184,7 @@ public:
 "}"));
         button_ok = new QPushButton(widget_bottom);
         button_ok->setObjectName(QString::fromUtf8("button_ok"));
-        button_ok->setGeometry(QRect(170, 810, 110, 36));
+        button_ok->setGeometry(QRect(170, 550, 110, 36));
         button_ok->setStyleSheet(QString::fromUtf8("#button_ok\n"
 "{\n"
 "	background: #00D770;\n"
@@ -214,12 +208,12 @@ public:
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         tablewidget_share_usb->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         tablewidget_share_usb->setObjectName(QString::fromUtf8("tablewidget_share_usb"));
-        tablewidget_share_usb->setGeometry(QRect(40, 460, 381, 301));
+        tablewidget_share_usb->setGeometry(QRect(20, 350, 401, 171));
         tablewidget_share_usb->setAutoFillBackground(false);
         tablewidget_share_usb->setFrameShape(QFrame::Box);
         checkbox_screen = new QCheckBox(widget_bottom);
         checkbox_screen->setObjectName(QString::fromUtf8("checkbox_screen"));
-        checkbox_screen->setGeometry(QRect(180, 760, 111, 31));
+        checkbox_screen->setGeometry(QRect(300, 180, 111, 31));
         checkbox_screen->setStyleSheet(QString::fromUtf8("#checkbox_screen\n"
 "{\n"
 "	color: #47505D;\n"
@@ -228,15 +222,13 @@ public:
         checkbox_screen->setChecked(true);
         lineedit_udp_port = new QLineEdit(widget_bottom);
         lineedit_udp_port->setObjectName(QString::fromUtf8("lineedit_udp_port"));
-        lineedit_udp_port->setGeometry(QRect(130, 380, 290, 36));
-        lineedit_udp_port->setMinimumSize(QSize(290, 36));
-        lineedit_udp_port->setMaximumSize(QSize(290, 36));
+        lineedit_udp_port->setGeometry(QRect(300, 270, 120, 36));
+        sizePolicy.setHeightForWidth(lineedit_udp_port->sizePolicy().hasHeightForWidth());
+        lineedit_udp_port->setSizePolicy(sizePolicy);
+        lineedit_udp_port->setMinimumSize(QSize(0, 0));
+        lineedit_udp_port->setMaximumSize(QSize(16777215, 16777215));
         lineedit_udp_port->setStyleSheet(QString::fromUtf8("#lineedit_udp_port\n"
 "{\n"
-"	min-height: 36px;\n"
-"	max-height: 36px;\n"
-"	min-width: 280px;\n"
-"	max-width: 280px;\n"
 "	border-radius: 4px;\n"
 "	background: #F0F4F5;\n"
 "	selection-color: red;\n"
@@ -254,20 +246,13 @@ public:
         combobox_bitrate->addItem(QString());
         combobox_bitrate->addItem(QString());
         combobox_bitrate->setObjectName(QString::fromUtf8("combobox_bitrate"));
-        combobox_bitrate->setGeometry(QRect(130, 190, 290, 36));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(combobox_bitrate->sizePolicy().hasHeightForWidth());
-        combobox_bitrate->setSizePolicy(sizePolicy1);
-        combobox_bitrate->setMinimumSize(QSize(290, 36));
-        combobox_bitrate->setMaximumSize(QSize(290, 36));
+        combobox_bitrate->setGeometry(QRect(90, 130, 120, 36));
+        sizePolicy.setHeightForWidth(combobox_bitrate->sizePolicy().hasHeightForWidth());
+        combobox_bitrate->setSizePolicy(sizePolicy);
+        combobox_bitrate->setMinimumSize(QSize(0, 0));
+        combobox_bitrate->setMaximumSize(QSize(16777215, 16777215));
         combobox_bitrate->setStyleSheet(QString::fromUtf8("#combobox_bitrate\n"
 "{\n"
-"	min-height: 36px;\n"
-"	max-height: 36px;\n"
-"	min-width: 290px;\n"
-"	max-width: 290px;\n"
 "	border-radius: 4px;\n"
 "	background: #F0F4F5;\n"
 "	selection-color: red;\n"
@@ -306,21 +291,21 @@ public:
 "	height: 36px;\n"
 "}\n"
 "\n"
-"QComboBox QAbstractItemView::Item:h"
-                        "over\n"
+"QComboBox QAbstractItemView::Item:hover\n"
 "{\n"
 "	color: white;\n"
 "	background-color: #00D770;\n"
 "}\n"
 "\n"
-"QComboBox QAbstractItemView::Item:selected\n"
+"QComboBox QAbst"
+                        "ractItemView::Item:selected\n"
 "{\n"
 "	color: white;\n"
 "	background-color: #00D770;\n"
 "}"));
         label_resolution = new QLabel(widget_bottom);
         label_resolution->setObjectName(QString::fromUtf8("label_resolution"));
-        label_resolution->setGeometry(QRect(40, 90, 81, 16));
+        label_resolution->setGeometry(QRect(20, 90, 61, 20));
         label_resolution->setStyleSheet(QString::fromUtf8("#label_resolution\n"
 "{\n"
 "	color: #47505D;\n"
@@ -328,7 +313,7 @@ public:
 "}"));
         checkbox_use_gateway = new QCheckBox(widget_bottom);
         checkbox_use_gateway->setObjectName(QString::fromUtf8("checkbox_use_gateway"));
-        checkbox_use_gateway->setGeometry(QRect(40, 760, 111, 31));
+        checkbox_use_gateway->setGeometry(QRect(20, 180, 131, 31));
         checkbox_use_gateway->setStyleSheet(QString::fromUtf8("#checkbox_use_gateway\n"
 "{\n"
 "	color: #47505D;\n"
@@ -339,17 +324,16 @@ public:
         combobox_fps->addItem(QString());
         combobox_fps->addItem(QString());
         combobox_fps->setObjectName(QString::fromUtf8("combobox_fps"));
-        combobox_fps->setGeometry(QRect(130, 130, 290, 36));
+        combobox_fps->setGeometry(QRect(300, 130, 120, 36));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(combobox_fps->sizePolicy().hasHeightForWidth());
         combobox_fps->setSizePolicy(sizePolicy1);
-        combobox_fps->setMinimumSize(QSize(290, 36));
-        combobox_fps->setMaximumSize(QSize(290, 36));
+        combobox_fps->setMinimumSize(QSize(0, 0));
+        combobox_fps->setMaximumSize(QSize(16777215, 16777215));
         combobox_fps->setStyleSheet(QString::fromUtf8("#combobox_fps\n"
 "{\n"
-"	min-height: 36px;\n"
-"	max-height: 36px;\n"
-"	min-width: 290px;\n"
-"	max-width: 290px;\n"
 "	border-radius: 4px;\n"
 "	background: #F0F4F5;\n"
 "	selection-color: red;\n"
@@ -390,19 +374,19 @@ public:
 "\n"
 "QComboBox QAbstractItemView::Item:hover\n"
 "{\n"
-"	"
-                        "color: white;\n"
+"	color: white;\n"
 "	background-color: #00D770;\n"
 "}\n"
 "\n"
-"QComboBox QAbstractItemView::Item:selected\n"
+"QComboBox QAbstractItemView::It"
+                        "em:selected\n"
 "{\n"
 "	color: white;\n"
 "	background-color: #00D770;\n"
 "}"));
         label_bitrate = new QLabel(widget_bottom);
         label_bitrate->setObjectName(QString::fromUtf8("label_bitrate"));
-        label_bitrate->setGeometry(QRect(40, 200, 85, 16));
+        label_bitrate->setGeometry(QRect(20, 140, 71, 20));
         label_bitrate->setStyleSheet(QString::fromUtf8("#label_bitrate\n"
 "{\n"
 "	color: #47505D;\n"
@@ -410,7 +394,7 @@ public:
 "}"));
         label_fps = new QLabel(widget_bottom);
         label_fps->setObjectName(QString::fromUtf8("label_fps"));
-        label_fps->setGeometry(QRect(40, 140, 85, 16));
+        label_fps->setGeometry(QRect(240, 140, 61, 20));
         label_fps->setStyleSheet(QString::fromUtf8("#label_fps\n"
 "{\n"
 "	color: #47505D;\n"
@@ -433,17 +417,16 @@ public:
         combobox_resolution->addItem(QString());
         combobox_resolution->addItem(QString());
         combobox_resolution->setObjectName(QString::fromUtf8("combobox_resolution"));
-        combobox_resolution->setGeometry(QRect(130, 80, 290, 36));
-        sizePolicy1.setHeightForWidth(combobox_resolution->sizePolicy().hasHeightForWidth());
-        combobox_resolution->setSizePolicy(sizePolicy1);
-        combobox_resolution->setMinimumSize(QSize(290, 36));
-        combobox_resolution->setMaximumSize(QSize(290, 36));
+        combobox_resolution->setGeometry(QRect(88, 80, 331, 36));
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(combobox_resolution->sizePolicy().hasHeightForWidth());
+        combobox_resolution->setSizePolicy(sizePolicy2);
+        combobox_resolution->setMinimumSize(QSize(0, 0));
+        combobox_resolution->setMaximumSize(QSize(16777215, 16777215));
         combobox_resolution->setStyleSheet(QString::fromUtf8("#combobox_resolution\n"
 "{\n"
-"	min-height: 36px;\n"
-"	max-height: 36px;\n"
-"	min-width: 290px;\n"
-"	max-width: 290px;\n"
 "	border-radius: 4px;\n"
 "	background: #F0F4F5;\n"
 "	selection-color: red;\n"
@@ -482,21 +465,21 @@ public:
 "	height: 36px;\n"
 "}\n"
 "\n"
-"QComboBox QAbstractItem"
-                        "View::Item:hover\n"
+"QComboBox QAbstractItemView::Item:hover\n"
 "{\n"
 "	color: white;\n"
 "	background-color: #00D770;\n"
 "}\n"
 "\n"
-"QComboBox QAbstractItemView::Item:selected\n"
+"QCo"
+                        "mboBox QAbstractItemView::Item:selected\n"
 "{\n"
 "	color: white;\n"
 "	background-color: #00D770;\n"
 "}"));
         label_share_usb = new QLabel(widget_bottom);
         label_share_usb->setObjectName(QString::fromUtf8("label_share_usb"));
-        label_share_usb->setGeometry(QRect(40, 440, 161, 16));
+        label_share_usb->setGeometry(QRect(20, 330, 181, 20));
         label_share_usb->setStyleSheet(QString::fromUtf8("#label_share_usb\n"
 "{\n"
 "	color: #47505D;\n"
@@ -504,7 +487,7 @@ public:
 "}"));
         label_tcp_port = new QLabel(widget_bottom);
         label_tcp_port->setObjectName(QString::fromUtf8("label_tcp_port"));
-        label_tcp_port->setGeometry(QRect(40, 320, 81, 16));
+        label_tcp_port->setGeometry(QRect(20, 280, 71, 20));
         label_tcp_port->setStyleSheet(QString::fromUtf8("#label_tcp_port\n"
 "{\n"
 "	color: #47505D;\n"
@@ -512,6 +495,17 @@ public:
 "}"));
         widget_bottom->raise();
         title_widget->raise();
+        QWidget::setTabOrder(combobox_resolution, combobox_bitrate);
+        QWidget::setTabOrder(combobox_bitrate, combobox_fps);
+        QWidget::setTabOrder(combobox_fps, checkbox_use_gateway);
+        QWidget::setTabOrder(checkbox_use_gateway, checkbox_screen);
+        QWidget::setTabOrder(checkbox_screen, lineedit_gateway);
+        QWidget::setTabOrder(lineedit_gateway, lineedit_tcp_port);
+        QWidget::setTabOrder(lineedit_tcp_port, lineedit_udp_port);
+        QWidget::setTabOrder(lineedit_udp_port, button_ok);
+        QWidget::setTabOrder(button_ok, button_cancel);
+        QWidget::setTabOrder(button_cancel, tablewidget_share_usb);
+        QWidget::setTabOrder(tablewidget_share_usb, button_close);
 
         retranslateUi(widget_settings);
 
@@ -529,14 +523,14 @@ public:
         button_close->setText(QString());
         label_udp_port->setText(QCoreApplication::translate("widget_settings", "UDP\347\253\257\345\217\243:", nullptr));
         button_cancel->setText(QCoreApplication::translate("widget_settings", "\345\217\226\346\266\210", nullptr));
-        label_gateway->setText(QCoreApplication::translate("widget_settings", "\347\275\221\345\205\263:", nullptr));
+        label_gateway->setText(QCoreApplication::translate("widget_settings", "\347\275\221   \345\205\263:", nullptr));
         button_ok->setText(QCoreApplication::translate("widget_settings", "\347\241\256\345\256\232", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tablewidget_share_usb->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("widget_settings", "ID", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tablewidget_share_usb->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("widget_settings", "\350\256\276\345\244\207\345\220\215\347\247\260", nullptr));
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("widget_settings", "Device", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = tablewidget_share_usb->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("widget_settings", "\346\230\257\345\220\246\345\205\261\344\272\253", nullptr));
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("widget_settings", "Share", nullptr));
         checkbox_screen->setText(QCoreApplication::translate("widget_settings", "\346\230\257\345\220\246\345\205\250\345\261\217", nullptr));
         combobox_bitrate->setItemText(0, QCoreApplication::translate("widget_settings", "10000", nullptr));
         combobox_bitrate->setItemText(1, QCoreApplication::translate("widget_settings", "20000", nullptr));
@@ -567,7 +561,7 @@ public:
         combobox_resolution->setItemText(13, QCoreApplication::translate("widget_settings", "1024x768", nullptr));
         combobox_resolution->setItemText(14, QCoreApplication::translate("widget_settings", "800x600", nullptr));
 
-        label_share_usb->setText(QCoreApplication::translate("widget_settings", "USB \345\205\261\344\272\253\350\256\276\345\244\207", nullptr));
+        label_share_usb->setText(QCoreApplication::translate("widget_settings", "USB \350\256\276\345\244\207", nullptr));
         label_tcp_port->setText(QCoreApplication::translate("widget_settings", "TCP\347\253\257\345\217\243:", nullptr));
     } // retranslateUi
 

@@ -387,7 +387,7 @@
 }</string>
      </property>
      <property name="text">
-      <string>青椒云桌面协议</string>
+      <string>QDP</string>
      </property>
     </widget>
     <widget class="QLabel" name="label">
@@ -514,6 +514,16 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineedit_address</tabstop>
+  <tabstop>lineedit_port</tabstop>
+  <tabstop>lineedit_username</tabstop>
+  <tabstop>lineedit_passwd</tabstop>
+  <tabstop>button_connection</tabstop>
+  <tabstop>button_settings</tabstop>
+  <tabstop>button_minisize</tabstop>
+  <tabstop>button_close</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

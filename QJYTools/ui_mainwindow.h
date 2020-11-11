@@ -270,6 +270,13 @@ public:
 "}"));
         lineedit_passwd->setEchoMode(QLineEdit::PasswordEchoOnEdit);
         MainWindow->setCentralWidget(centralwidget);
+        QWidget::setTabOrder(lineedit_address, lineedit_port);
+        QWidget::setTabOrder(lineedit_port, lineedit_username);
+        QWidget::setTabOrder(lineedit_username, lineedit_passwd);
+        QWidget::setTabOrder(lineedit_passwd, button_connection);
+        QWidget::setTabOrder(button_connection, button_settings);
+        QWidget::setTabOrder(button_settings, button_minisize);
+        QWidget::setTabOrder(button_minisize, button_close);
 
         retranslateUi(MainWindow);
 
@@ -308,7 +315,7 @@ public:
         button_close->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>\345\205\263\351\227\255</p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)
         button_close->setText(QString());
-        label_title->setText(QCoreApplication::translate("MainWindow", "\351\235\222\346\244\222\344\272\221\346\241\214\351\235\242\345\215\217\350\256\256", nullptr));
+        label_title->setText(QCoreApplication::translate("MainWindow", "QDP", nullptr));
         label->setText(QString());
         label_username->setText(QCoreApplication::translate("MainWindow", "\350\257\267\350\276\223\345\205\245\347\224\250\346\210\267\345\220\215\357\274\232", nullptr));
         lineedit_username->setPlaceholderText(QCoreApplication::translate("MainWindow", "Administrator (\347\244\272\344\276\213)", nullptr));

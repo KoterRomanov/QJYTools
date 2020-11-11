@@ -23,7 +23,7 @@ VS_VERSION_INFO VERSIONINFO
 				VALUE "FileDescription", "QDP Client\0"
 				VALUE "FileVersion", "3.0.4.0\0"
 				VALUE "LegalCopyright", "Copyright(C) 1998 - 2020 Rayvision. All Rights Reserved\0"
-				VALUE "OriginalFilename", "QingJiao.exe\0"
+				VALUE "OriginalFilename", "QDP.exe\0"
 				VALUE "ProductName", "QDP Client\0"
 				VALUE "ProductVersion", "3.0.4.0\0"
 			END

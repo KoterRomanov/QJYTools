@@ -50,3 +50,6 @@ compile_commands.json
 
 # QtCreator local machine specific files for imported projects
 *creator.user*
+*.obj
+QJYTools/release/QDP Client.exe
+QJYTools/release/QDP Client_resource.res

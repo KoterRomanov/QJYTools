@@ -1,4 +1,5 @@
 ﻿#include "settings.h"
+#include "define.h"
 #include "ui_Settings.h"
 
 #include <QListView>
@@ -24,13 +25,26 @@ Settings::Settings(QWidget *parent)
     ui->combobox_resolution->setView(new QListView());
     ui->combobox_fps->setView(new QListView());
     ui->combobox_bitrate->setView(new QListView());
-    ui->combobox_resolution->setMaxVisibleItems(5);
 
+    // 设定分辨率下拉框显示项目个数
+    ui->combobox_resolution->setMaxVisibleItems(2);
+
+    // 设定比特流下拉框显示项目个数
+    ui->combobox_bitrate->setMaxVisibleItems(1);
+
+    // 设定FPS 下拉框显示项目个数
+    ui->combobox_fps->setMaxVisibleItems(1);
+
+    // 设置无边框窗口模式
     setWindowFlags(Qt::FramelessWindowHint);
+
+    // 设置背景透明
     setAttribute(Qt::WA_TranslucentBackground, true);
 
+    // 拦截 title_widget 对象的事件
     ui->title_widget->installEventFilter(this);
 
+    // 默认不使用网关
     ui->checkbox_use_gateway->setChecked(false);
 
     // USB 设备共享列表根据内容使用列宽度
@@ -42,7 +56,7 @@ Settings::Settings(QWidget *parent)
 #ifdef ENGLISH_VERSION
     ui->label_title->setText("Settings");
 
-    ui->label_resolution->setText("Resolution:");
+    ui->label_resolution->setText("Res:");
     ui->label_fps->setText("FPS:");
     ui->label_bitrate->setText("Bitrate:");
 
@@ -54,8 +68,12 @@ Settings::Settings(QWidget *parent)
     ui->label_gateway->setText("Gateway:");
     ui->label_tcp_port->setText("TCP Port:");
     ui->label_udp_port->setText("UDP Port:");
+
+
+    ui->label_share_usb->setText("USB Device");
 #endif
 
+    // 读取 USB 设备并写入文件
     process = new QProcess;
     connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
           [=](int exitCode, QProcess::ExitStatus exitStatus){ read_usb_device(); });
@@ -314,34 +332,36 @@ void Settings::on_checkbox_use_gateway_stateChanged(int arg1)
     ui->lineedit_tcp_port->setHidden(!arg1);
     ui->lineedit_udp_port->setHidden(!arg1);
 
+    int move_height = 100;
+
     if (arg1 == Qt::Checked)
     {
-        ui->label_share_usb->move(ui->label_share_usb->pos().x(), ui->label_share_usb->pos().y()+200);
-        ui->tablewidget_share_usb->move(ui->tablewidget_share_usb->pos().x(), ui->tablewidget_share_usb->pos().y()+200);
+        ui->label_share_usb->move(ui->label_share_usb->pos().x(), ui->label_share_usb->pos().y()+move_height);
+        ui->tablewidget_share_usb->move(ui->tablewidget_share_usb->pos().x(), ui->tablewidget_share_usb->pos().y()+move_height);
 
-        ui->checkbox_use_gateway->move(ui->checkbox_use_gateway->pos().x(), ui->checkbox_use_gateway->pos().y()+200);
-        ui->checkbox_screen->move(ui->checkbox_screen->pos().x(), ui->checkbox_screen->pos().y()+200);
+//        ui->checkbox_use_gateway->move(ui->checkbox_use_gateway->pos().x(), ui->checkbox_use_gateway->pos().y()+200);
+//        ui->checkbox_screen->move(ui->checkbox_screen->pos().x(), ui->checkbox_screen->pos().y()+200);
 
-        ui->button_ok->move(ui->button_ok->pos().x(), ui->button_ok->pos().y()+216);
-        ui->button_cancel->move(ui->button_cancel->pos().x(), ui->button_cancel->pos().y()+216);
+        ui->button_ok->move(ui->button_ok->pos().x(), ui->button_ok->pos().y()+move_height);
+        ui->button_cancel->move(ui->button_cancel->pos().x(), ui->button_cancel->pos().y()+move_height);
 
-        ui->widget_bottom->setFixedHeight(size().height()+216);
+        ui->widget_bottom->setFixedHeight(size().height()+move_height);
 
-        setFixedHeight( size().height()+216);
+        setFixedHeight( size().height()+move_height);
     }
     else if (arg1 == Qt::Unchecked)
     {
-        ui->label_share_usb->move(ui->label_share_usb->pos().x(), ui->label_share_usb->pos().y()-200);
-        ui->tablewidget_share_usb->move(ui->tablewidget_share_usb->pos().x(), ui->tablewidget_share_usb->pos().y()-200);
+        ui->label_share_usb->move(ui->label_share_usb->pos().x(), ui->label_share_usb->pos().y()-move_height);
+        ui->tablewidget_share_usb->move(ui->tablewidget_share_usb->pos().x(), ui->tablewidget_share_usb->pos().y()-move_height);
 
-        ui->checkbox_use_gateway->move(ui->checkbox_use_gateway->pos().x(), ui->checkbox_use_gateway->pos().y()-200);
-        ui->checkbox_screen->move(ui->checkbox_screen->pos().x(), ui->checkbox_screen->pos().y()-200);
+//        ui->checkbox_use_gateway->move(ui->checkbox_use_gateway->pos().x(), ui->checkbox_use_gateway->pos().y()-200);
+//        ui->checkbox_screen->move(ui->checkbox_screen->pos().x(), ui->checkbox_screen->pos().y()-200);
 
-        ui->button_ok->move(ui->button_ok->pos().x(), ui->button_ok->pos().y()-216);
-        ui->button_cancel->move(ui->button_cancel->pos().x(), ui->button_cancel->pos().y()-216);
+        ui->button_ok->move(ui->button_ok->pos().x(), ui->button_ok->pos().y()-move_height);
+        ui->button_cancel->move(ui->button_cancel->pos().x(), ui->button_cancel->pos().y()-move_height);
 
-        ui->widget_bottom->setFixedHeight(size().height()-216);
-        setFixedHeight( size().height()-216);
+        ui->widget_bottom->setFixedHeight(size().height()-move_height);
+        setFixedHeight( size().height()-move_height);
     }
 
     update();

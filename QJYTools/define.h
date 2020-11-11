@@ -1,0 +1,7 @@
+#ifndef DEFINE_H
+#define DEFINE_H
+
+// ”Ô—‘øÿ÷∆
+#define ENGLISH_VERSION
+
+#endif // DEFINE_H

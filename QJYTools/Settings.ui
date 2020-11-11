@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>448</width>
-    <height>900</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>448</width>
-    <height>900</height>
+    <height>600</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>448</width>
-    <height>900</height>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -127,7 +127,7 @@
      <x>0</x>
      <y>0</y>
      <width>448</width>
-     <height>900</height>
+     <height>600</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -139,13 +139,13 @@
    <property name="minimumSize">
     <size>
      <width>448</width>
-     <height>900</height>
+     <height>600</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>448</width>
-     <height>900</height>
+     <height>600</height>
     </size>
    </property>
    <property name="styleSheet">
@@ -160,10 +160,10 @@
    <widget class="QLabel" name="label_udp_port">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>390</y>
-      <width>81</width>
-      <height>16</height>
+      <x>230</x>
+      <y>280</y>
+      <width>71</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -180,31 +180,27 @@
    <widget class="QLineEdit" name="lineedit_gateway">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>250</y>
-      <width>290</width>
+      <x>90</x>
+      <y>220</y>
+      <width>331</width>
       <height>36</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>0</width>
+      <height>0</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>16777215</width>
+      <height>16777215</height>
      </size>
     </property>
     <property name="styleSheet">
      <string notr="true">#lineedit_gateway
 {
-	min-height: 36px;
-	max-height: 36px;
-	min-width: 280px;
-	max-width: 280px;
 	border-radius: 4px;
 	background: #F0F4F5;
 	selection-color: red;
@@ -220,31 +216,33 @@
    <widget class="QLineEdit" name="lineedit_tcp_port">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>315</y>
-      <width>290</width>
+      <x>90</x>
+      <y>270</y>
+      <width>120</width>
       <height>36</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="minimumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>0</width>
+      <height>0</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>16777215</width>
+      <height>16777215</height>
      </size>
     </property>
     <property name="styleSheet">
      <string notr="true">#lineedit_tcp_port
 {
-	min-height: 36px;
-	max-height: 36px;
-	min-width: 280px;
-	max-width: 280px;
 	border-radius: 4px;
 	background: #F0F4F5;
 	selection-color: red;
@@ -261,7 +259,7 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>810</y>
+      <y>550</y>
       <width>110</width>
       <height>36</height>
      </rect>
@@ -287,10 +285,10 @@
    <widget class="QLabel" name="label_gateway">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>260</y>
-      <width>81</width>
-      <height>16</height>
+      <x>20</x>
+      <y>230</y>
+      <width>71</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -301,14 +299,14 @@
 }</string>
     </property>
     <property name="text">
-     <string>网关:</string>
+     <string>网   关:</string>
     </property>
    </widget>
    <widget class="QPushButton" name="button_ok">
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>810</y>
+      <y>550</y>
       <width>110</width>
       <height>36</height>
      </rect>
@@ -335,10 +333,10 @@
    <widget class="QTableWidget" name="tablewidget_share_usb">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>460</y>
-      <width>381</width>
-      <height>301</height>
+      <x>20</x>
+      <y>350</y>
+      <width>401</width>
+      <height>171</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -354,20 +352,20 @@
     </column>
     <column>
      <property name="text">
-      <string>设备名称</string>
+      <string>Device</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>是否共享</string>
+      <string>Share</string>
      </property>
     </column>
    </widget>
    <widget class="QCheckBox" name="checkbox_screen">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>760</y>
+      <x>300</x>
+      <y>180</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -389,31 +387,33 @@
    <widget class="QLineEdit" name="lineedit_udp_port">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>380</y>
-      <width>290</width>
+      <x>300</x>
+      <y>270</y>
+      <width>120</width>
       <height>36</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="minimumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>0</width>
+      <height>0</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>16777215</width>
+      <height>16777215</height>
      </size>
     </property>
     <property name="styleSheet">
      <string notr="true">#lineedit_udp_port
 {
-	min-height: 36px;
-	max-height: 36px;
-	min-width: 280px;
-	max-width: 280px;
 	border-radius: 4px;
 	background: #F0F4F5;
 	selection-color: red;
@@ -429,37 +429,33 @@
    <widget class="QComboBox" name="combobox_bitrate">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>190</y>
-      <width>290</width>
+      <x>90</x>
+      <y>130</y>
+      <width>120</width>
       <height>36</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
     <property name="minimumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>0</width>
+      <height>0</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>16777215</width>
+      <height>16777215</height>
      </size>
     </property>
     <property name="styleSheet">
      <string notr="true">#combobox_bitrate
 {
-	min-height: 36px;
-	max-height: 36px;
-	min-width: 290px;
-	max-width: 290px;
 	border-radius: 4px;
 	background: #F0F4F5;
 	selection-color: red;
@@ -539,10 +535,10 @@ QComboBox QAbstractItemView::Item:selected
    <widget class="QLabel" name="label_resolution">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>20</x>
       <y>90</y>
-      <width>81</width>
-      <height>16</height>
+      <width>61</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -559,9 +555,9 @@ QComboBox QAbstractItemView::Item:selected
    <widget class="QCheckBox" name="checkbox_use_gateway">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>760</y>
-      <width>111</width>
+      <x>20</x>
+      <y>180</y>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
@@ -582,37 +578,33 @@ QComboBox QAbstractItemView::Item:selected
    <widget class="QComboBox" name="combobox_fps">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>300</x>
       <y>130</y>
-      <width>290</width>
+      <width>120</width>
       <height>36</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
     <property name="minimumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>0</width>
+      <height>0</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>16777215</width>
+      <height>16777215</height>
      </size>
     </property>
     <property name="styleSheet">
      <string notr="true">#combobox_fps
 {
-	min-height: 36px;
-	max-height: 36px;
-	min-width: 290px;
-	max-width: 290px;
 	border-radius: 4px;
 	background: #F0F4F5;
 	selection-color: red;
@@ -677,10 +669,10 @@ QComboBox QAbstractItemView::Item:selected
    <widget class="QLabel" name="label_bitrate">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>200</y>
-      <width>85</width>
-      <height>16</height>
+      <x>20</x>
+      <y>140</y>
+      <width>71</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -697,10 +689,10 @@ QComboBox QAbstractItemView::Item:selected
    <widget class="QLabel" name="label_fps">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>240</x>
       <y>140</y>
-      <width>85</width>
-      <height>16</height>
+      <width>61</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -717,37 +709,33 @@ QComboBox QAbstractItemView::Item:selected
    <widget class="QComboBox" name="combobox_resolution">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>88</x>
       <y>80</y>
-      <width>290</width>
+      <width>331</width>
       <height>36</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
     <property name="minimumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>0</width>
+      <height>0</height>
      </size>
     </property>
     <property name="maximumSize">
      <size>
-      <width>290</width>
-      <height>36</height>
+      <width>16777215</width>
+      <height>16777215</height>
      </size>
     </property>
     <property name="styleSheet">
      <string notr="true">#combobox_resolution
 {
-	min-height: 36px;
-	max-height: 36px;
-	min-width: 290px;
-	max-width: 290px;
 	border-radius: 4px;
 	background: #F0F4F5;
 	selection-color: red;
@@ -877,10 +865,10 @@ QComboBox QAbstractItemView::Item:selected
    <widget class="QLabel" name="label_share_usb">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>440</y>
-      <width>161</width>
-      <height>16</height>
+      <x>20</x>
+      <y>330</y>
+      <width>181</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -891,16 +879,16 @@ QComboBox QAbstractItemView::Item:selected
 }</string>
     </property>
     <property name="text">
-     <string>USB 共享设备</string>
+     <string>USB 设备</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_tcp_port">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>320</y>
-      <width>81</width>
-      <height>16</height>
+      <x>20</x>
+      <y>280</y>
+      <width>71</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -918,6 +906,20 @@ QComboBox QAbstractItemView::Item:selected
   <zorder>widget_bottom</zorder>
   <zorder>title_widget</zorder>
  </widget>
+ <tabstops>
+  <tabstop>combobox_resolution</tabstop>
+  <tabstop>combobox_bitrate</tabstop>
+  <tabstop>combobox_fps</tabstop>
+  <tabstop>checkbox_use_gateway</tabstop>
+  <tabstop>checkbox_screen</tabstop>
+  <tabstop>lineedit_gateway</tabstop>
+  <tabstop>lineedit_tcp_port</tabstop>
+  <tabstop>lineedit_udp_port</tabstop>
+  <tabstop>button_ok</tabstop>
+  <tabstop>button_cancel</tabstop>
+  <tabstop>tablewidget_share_usb</tabstop>
+  <tabstop>button_close</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
